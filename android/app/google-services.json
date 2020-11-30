@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "692768353210",
+    "firebase_url": "https://eserve-50c96.firebaseio.com",
+    "project_id": "eserve-50c96",
+    "storage_bucket": "eserve-50c96.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692768353210:android:9cb7d77e2caa03a3b84b83",
+        "android_client_info": {
+          "package_name": "com.example.Eserve"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692768353210-pc2fek11q5bgofp7pbbhgrs5vmlv4rat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA15ANwS_TXMsguO3VPj5FPtnpZ1e-_dFk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692768353210-pc2fek11q5bgofp7pbbhgrs5vmlv4rat.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
