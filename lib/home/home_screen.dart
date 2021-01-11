@@ -6,6 +6,7 @@ import 'package:Eserve/login_register/modelsCust/userss.dart';
 import 'package:Eserve/util/progress.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:Eserve/home/catalogue.dart';
 import 'package:Eserve/util/custom_colors.dart';
@@ -29,7 +30,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final usersRef = Firestore.instance.collection('Customerusers');
-  final GoogleSignIn googleSignIn = GoogleSignIn();
 
   buildProfileHeader() {
     CustomColors customColor = CustomColors();
@@ -128,9 +128,10 @@ class _HomeScreenState extends State<HomeScreen> {
           actions: <Widget>[
             FlatButton(
                 onPressed: () {
-                  Navigator.of(context).pop();
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => LoginCust()));
+                  Navigator.of(context).pushAndRemoveUntil(
+                    CupertinoPageRoute(builder: (context) => LoginCust()),
+                    (_) => false,
+                  );
                 },
                 child: Text(
                   "Logout",

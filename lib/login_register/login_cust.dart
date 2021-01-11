@@ -82,7 +82,8 @@ class _LoginCustState extends State<LoginCust> {
                               validator: pwdValidator,
                               obscureText: true,
                               decoration: InputDecoration(
-                                  hintText: "Password must be longer than 8 characters",
+                                  hintText:
+                                      "Password must be longer than 8 characters",
                                   labelText: "Password"),
                             ),
                             Container(
@@ -109,8 +110,16 @@ class _LoginCustState extends State<LoginCust> {
                                         var ll = user.metadata.lastSignInTime
                                             .toString();
 
-                                        _showMyDialog(
-                                            userid, dispn, pu, em, ll);
+                                        Navigator.pushAndRemoveUntil(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => DataMain(
+                                                    profileId: userid,
+                                                    em: em,
+                                                    dn: dispn,
+                                                    pu: pu,
+                                                    ll: ll)),
+                                            (Route<dynamic> route) => false);
                                       }).catchError((e) {
                                         print(e);
                                         setState(() {

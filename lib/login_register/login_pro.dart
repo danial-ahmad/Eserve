@@ -1,3 +1,4 @@
+import 'package:Eserve/Professional/fileUpload.dart';
 import 'package:Eserve/Professional/prohome.dart';
 import 'package:Eserve/login_register/create_account.dart';
 
@@ -103,7 +104,12 @@ class _LoginProState extends State<LoginPro> {
                                           .then((AuthResult auth) {
                                         FirebaseUser user = auth.user;
                                         var userid = user.uid;
-                                        _showMyDialog(userid);
+                                        Navigator.pushAndRemoveUntil(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ProHome(userid)),
+                                            (Route<dynamic> route) => false);
                                       }).catchError((e) {
                                         print(e);
                                         setState(() {
@@ -146,8 +152,10 @@ class _LoginProState extends State<LoginPro> {
                         textAlign: TextAlign.center),
                     InkWell(
                       onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => RegPro()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => FileAuth()));
                       },
                       child: Text("Sign UP!",
                           style: TextStyle(

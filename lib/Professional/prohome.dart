@@ -49,7 +49,9 @@ class _ProHomeState extends State<ProHome> {
 
   String postId = Uuid().v4();
 
+
   buildProfileHeader() {
+    
     CustomColors customColor = CustomColors();
     final usersRef = Firestore.instance.collection('Prousers');
     return FutureBuilder(
@@ -170,10 +172,9 @@ class _ProHomeState extends State<ProHome> {
               ),
               FlatButton(
                   onPressed: () {
-                    Navigator.pop(context);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => LoginPro()),
+                    Navigator.of(context).pushAndRemoveUntil(
+                      CupertinoPageRoute(builder: (context) => LoginPro()),
+                      (_) => false,
                     );
                   },
                   child: Text("Logout")),

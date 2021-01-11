@@ -142,7 +142,7 @@ class _RegCustState extends State<RegCust> {
                                                   'Please supply a valid email';
                                             });
                                           } else {
-                                            _showMyDialog();
+                                            _pushPage(context, LoginCust());
                                           }
                                         }
                                       },

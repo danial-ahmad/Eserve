@@ -143,7 +143,7 @@ class _RegProState extends State<RegPro> {
                                                   'Please supply a valid email';
                                             });
                                           } else {
-                                            _showMyDialog();
+                                            _pushPage(context, LoginPro());
                                           }
                                         }
                                       },
